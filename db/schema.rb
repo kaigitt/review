@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_105639) do
+ActiveRecord::Schema.define(version: 2021_03_01_152847) do
 
   create_table "pf_reviews", force: :cascade do |t|
     t.integer "reviewer_user_id", null: false
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2021_03_01_105639) do
     t.text "remarks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "image_id"
   end
 
   create_table "users", force: :cascade do |t|

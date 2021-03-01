@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="row d-flex justify-content-center">
+    <%= form_with model: @port_folio, url: port_folios_path, method: :post, local: true do |f| %>
+    <div class="form-group col">
+      <%= f.label "ポートフォリオ名" %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "イメージ" %>
+      <%= f.attachment_field :image, class: "form-control" %>
+    </div>
+    <div class="form-group col">
+    <%= f.label "新規登録OK" %>
+      <%= f.radio_button :signin_ok, :true%>
+      <%= f.radio_button :signin_ok, :false%>
+    </div>
+    <div class="form-group col">
+    <%= f.label "ログインOK" %>
+      <%= f.radio_button :signup_ok, :true%>
+      <%= f.radio_button :signup_ok, :false%>
+    </div>
+    <div class="form-group col">
+    <%= f.label "このサイト外で共有・公開してもOK" %>
+      <%= f.radio_button :share_others, :true%>
+      <%= f.radio_button :share_others, :false%>
+    </div>
+    <div class="form-group col">
+    <%= f.label "インスタンス稼働状態" %>
+      <%= f.radio_button :instance, :true%>
+      <%= f.radio_button :instance, :false%>
+    </div>
+
+    <div class="form-group col">
+      <%= f.label "サイトURL" %>
+      <%= f.text_field :site_url, class: "form-control" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "GitHub URL" %>
+      <%= f.text_field :git_hub_url, class: "form-control" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "スライド、資料等 URL" %>
+      <%= f.text_field :files, class: "form-control" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "制作背景" %>
+      <%= f.text_field :background_story, class: "form-control" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "ターゲット" %>
+      <%= f.text_field :target, class: "form-control" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "工夫した点" %>
+      <%= f.text_field :ingenuity_point, class: "form-control" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "苦労した点" %>
+      <%= f.text_field :difficult_point, class: "form-control" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "学んだこと" %>
+      <%= f.text_field :learn_point, class: "form-control" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "今後実装したい機能" %>
+      <%= f.text_field :wanna_install, class: "form-control" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "レビュー者に伝えたいこと" %>
+      <%= f.text_field :remarks, class: "form-control" %>
+    </div>
+    <div class="submit_bottom_group">
+    <%= f.submit "入力内容を送信する", class: "btn" %>
+    </div>
+    <% end %>
+  </div>
+</div>
