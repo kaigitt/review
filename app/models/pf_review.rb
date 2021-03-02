@@ -1,0 +1,2 @@
+class PfReview < ApplicationRecord
+end

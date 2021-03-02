@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row d-flex mt-5">
+    <%= form_with model: @port_folio, url: port_folios_path, method: :post, local: true do |f| %>
+    <div class="form-group col-6">
+      <%= f.label "ポートフォリオ名" %> <span class="badge badge-danger">必須</span>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+    <div class="form-group col-6">
+      <%= f.label "イメージ" %>
+      <%= f.attachment_field :image, class: "form-control" %>
+    </div>
+    <div class="form-group col-6">
+    <%= f.label "新規登録OK" %> <span class="badge badge-danger">必須</span>
+      <%= f.radio_button :signin_ok, :true%>OK
+      <%= f.radio_button :signin_ok, :false%>NG
+    </div>
+    <div class="form-group col-6">
+    <%= f.label "ログインOK" %> <span class="badge badge-danger">必須</span>
+      <%= f.radio_button :signup_ok, :true%>OK
+      <%= f.radio_button :signup_ok, :false%>NG
+    </div>
+    <div class="form-group col-12">
+    <%= f.label "このサイト外で共有・公開してもOK" %> <span class="badge badge-danger">必須</span>
+      <%= f.radio_button :share_others, :true%>OK
+      <%= f.radio_button :share_others, :false%>NG
+    </div>
+    <div class="form-group col-12">
+    <%= f.label "サイト状態（エラーやインスタンスの状態による）" %> <span class="badge badge-danger">必須</span>
+      <%= f.radio_button :instance, :true%>閲覧できます
+      <%= f.radio_button :instance, :false%>閲覧できません
+    </div>
+
+    <div class="form-group col">
+      <%= f.label "サイトURL" %> <span class="badge badge-danger">必須</span>
+      <%= f.text_field :site_url, class: "form-control" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "GitHub URL" %>
+      <%= f.text_field :git_hub_url, class: "form-control" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "スライド、資料等 URL" %>
+      <%= f.text_field :files, class: "form-control" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "制作背景" %> <span class="badge badge-danger">必須</span>
+      <%= f.text_field :background_story, size: "50x2", class: "form-control-big" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "ターゲット" %> <span class="badge badge-danger">必須</span>
+      <%= f.text_field :target, class: "form-control-big" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "工夫した点" %> <span class="badge badge-danger">必須</span>
+      <%= f.text_field :ingenuity_point, class: "form-control-big" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "苦労した点" %> <span class="badge badge-danger">必須</span>
+      <%= f.text_field :difficult_point, class: "form-control-big" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "学んだこと" %> <span class="badge badge-danger">必須</span>
+      <%= f.text_field :learn_point, class: "form-control-big" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "今後実装したい機能" %> <span class="badge badge-danger">必須</span>
+      <%= f.text_field :wanna_install, class: "form-control-big" %>
+    </div>
+    <div class="form-group col">
+      <%= f.label "レビュー者に伝えたいこと" %>
+      <%= f.text_field :remarks, class: "form-control" %>
+    </div>
+
+    <%= f.check_box :agreement, :as => :boolean, checked:false %>利用規約とプライバシーポリシーに同意する
+
+    <div class="submit_bottom_group">
+    <%= f.submit "入力内容を送信する", class: "btn" %>
+    </div>
+    <% end %>
+  </div>
+</div>
