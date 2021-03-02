@@ -9,7 +9,7 @@ class PortFoliosController < ApplicationController
     if port_folio.save
       redirect_to port_folio_path(port_folio)
     else
-      render "port_folio/new"
+      render "port_folios/new"
     end
 
   end
@@ -42,7 +42,8 @@ class PortFoliosController < ApplicationController
     :difficult_point,
     :learn_point,
     :wanna_install,
-    :remarks
+    :remarks,
+    :agreement
     )
   end
 end
